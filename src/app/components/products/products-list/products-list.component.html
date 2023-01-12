@@ -1,0 +1,10 @@
+<table class="table" *ngIf="sate">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Selected</th>
+    <th>Available</th>
+  </tr>
+  <app-product-item *ngFor="let product of sate.products" [product]="product" style="display: contents"></app-product-item>
+</table>

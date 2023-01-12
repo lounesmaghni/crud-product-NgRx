@@ -1,0 +1,48 @@
+<div class="container">
+  <ng-container *ngIf="productFormGroup">
+    <ng-container *ngIf="state as data">
+      <ng-container *ngIf="data.dataState==productsStateEnum.LOADING">
+        Loading ...
+      </ng-container>
+      <ng-container *ngIf="data.dataState==productsStateEnum.LOADED">
+        <div class="alert-success container p-3 m-3">
+          <span>Product saved successful</span>
+          <button class="btn btn-success mx-3" (click)="newProduct()">New product</button>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="data.dataState==productsStateEnum.NEW">
+        <form [formGroup]="productFormGroup"(ngSubmit)="onSaveProduct()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="name" id="name"
+                   [ngClass]="{'is-invalid':submitted && productFormGroup.controls['name'].errors}">
+            <div *ngIf="submitted && productFormGroup.controls['name'].errors" class="invalid-feedback">
+              <div *ngIf="productFormGroup.controls['name'].errors['required']"> Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Price</label>
+            <input type="text" class="form-control" formControlName="price">
+          </div>
+          <div class="form-group">
+            <label>Quantity</label>
+            <input type="text" class="form-control" formControlName="quantity">
+          </div>
+          <div class="form-group">
+            <label>Selected</label>
+            <input type="checkbox" formControlName="selected" class="form-check">
+          </div>
+          <div class="form-group">
+            <label>Available</label>
+            <input type="checkbox" formControlName="available" class="form-check">
+          </div>
+          <div class="mt-xxl-1">
+            <button class="btn btn-success" (click)="onSaveProduct()">Save</button>
+          </div>
+        </form>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</div>
+
+

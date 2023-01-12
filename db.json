@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "printer",
+      "price": "300",
+      "quantity": 600,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "printe",
+      "price": 300,
+      "quantity": 600,
+      "selected": true,
+      "available": true
+    },
+    {
+      "name": "keyboard",
+      "price": "800",
+      "quantity": "50",
+      "selected": true,
+      "available": false,
+      "id": 3
+    }
+  ]
+}
